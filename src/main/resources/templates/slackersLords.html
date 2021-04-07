@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Повелители бездельники</title>
+</head>
+<body>
+<h3> Таблица повелителей бездельников</h3>
+<table border="1">
+    <tr>
+        <th>ИД</th>
+        <th>Имя</th>
+        <th>Возраст</th>
+    </tr>
+    <tr th:each="lord : ${slackersLords}">
+        <td th:text="${lord.id}"></td>
+        <td th:text="${lord.name}"></td>
+        <td th:text="${lord.age}"></td>
+    </tr>
+</table>
+</body>
+</html>

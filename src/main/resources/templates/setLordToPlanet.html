@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Назначить повелителя</title>
+</head>
+<body>
+<ruby>Название изменемой планеты:</ruby>
+<b th:text="${updatedPlanet.name}"></b>
+</br>
+</br>
+<ruby>Назначить повелителя по id</ruby>
+<form action="#" th:action="@{/overlord/planet/update/{id}(id=${updatedPlanet.id})}" th:object="${updatedPlanet}" method="post">
+    <label for="name"></label>
+    <input type="hidden" th:field="*{name}" id="name">
+    <label for="lord"></label>
+    <input type="number" th:field="*{lord}" id="lord">
+    </br>
+    <input type="submit" value="Сохранить изменения">
+</form>
+<h3> Таблица повелителей</h3>
+<table border="1">
+    <tr>
+        <th>ИД</th>
+        <th>Имя</th>
+        <th>Возраст</th>
+    </tr>
+    <tr th:each="lord : ${lords}">
+        <td th:text="${lord.id}"></td>
+        <td th:text="${lord.name}"></td>
+        <td th:text="${lord.age}"></td>
+    </tr>
+</table>
+</body>
+</html>
