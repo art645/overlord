@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить планету</title>
+</head>
+<body>
+<h2>Заполните необходимые поля</h2>
+<form action="#" th:action="@{/overlord/planet/add}" th:object="${planet}" method="post">
+    <label for="name">Название планеты</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <input type="submit" value="Добавить планету">
+</form>
+</body>
+</html>
