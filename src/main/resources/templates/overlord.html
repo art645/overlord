@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список повелителей и планет </title>
+</head>
+<body>
+<h3> Таблица планет и их повелителей</h3>
+<table border="1">
+    <thead>
+    <th>ИД</th>
+    <th>Название планеты</th>
+    <th>Повелитель</th>
+    </thead>
+    <tr th:each="planet : ${planets}">
+        <td th:text="${planet.id}"></td>
+        <td th:text="${planet.name}"></td>
+        <td th:text="${planet.lord}"></td>
+        <td> <a th:href="@{planet/delete/{id}(id=${planet.id})}">Уничтожить</a> </td>
+        <td> <a th:href="@{planet/update/{id}(id=${planet.id})}">Назначить повелителя</a> </td>
+    </tr>
+</table>
+<a href="/overlord/planet/add">Добавить планету</a></h3>
+</br>
+<h3> Таблица повелителей</h3>
+<table border="1">
+    <tr>
+    <th>ИД</th>
+    <th>Имя</th>
+    <th>Возраст</th>
+    </tr>
+    <tr th:each="lord : ${lords}">
+        <td th:text="${lord.id}"></td>
+        <td th:text="${lord.name}"></td>
+        <td th:text="${lord.age}"></td>
+    </tr>
+</table>
+<a href="/overlord/lord/add">Добавить повелителя</a></h3>
+</br>
+<a href="/overlord/lord/top/young">Топ 10 самых молодых повелителей</a></h3>
+</br>
+<a href="/overlord/lord/slacker">Повелители бездельники</a></h3>
+</body>
+</html>
