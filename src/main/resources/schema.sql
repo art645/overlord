@@ -43,9 +43,4 @@ INSERT INTO planets(id,name) VALUES
 INSERT INTO planets(id,name,lord_id) VALUES
 (15,'Циклоферон',1),
 (16,'Садам',2);
-    SELECT *
-    FROM lords
-    WHERE  lords.id NOT IN (
-    SELECT lords.id
-    FROM lords nested JOIN planets p on nested.id = p.lord_id
-        AND nested.id = lords.id);
+
