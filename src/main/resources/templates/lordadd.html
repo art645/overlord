@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить повелителя</title>
+</head>
+<body>
+<h2>Заполните необходимые поля</h2>
+<form action="#" th:action="@{/overlord/lord/add}" th:object="${lord}" method="post">
+    <label for="name">Имя повелителя</label>
+    <input type="text" th:field="*{name}" id="name">
+    </br>
+    <label for="age">Возраст</label>
+    <input type="number" th:field="*{age}" id="age">
+    </br>
+    <input type="submit" value="Добавить повелителя">
+</form>
+</body>
+</html>
